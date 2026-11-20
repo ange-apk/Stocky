@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Poste de secours</title>
+<style>:root { --bg: rgb(243,246,250); --surface: rgb(255,255,255); --ink: rgb(13,35,64); --muted: rgb(86,107,133); --line: rgb(211,220,232); --acc: rgb(245,154,0); --acct: rgb(180,95,0); --accbg: rgb(255,242,220); --ok: rgb(23,130,93); --btn: rgb(10,76,154); --btntx: rgb(255,255,255); --hdr: rgb(10,76,154); box-sizing: border-box; }@media not all { :root:not([data-theme="light"]) { --bg: rgb(12,22,34); --surface: rgb(20,34,52); --ink: rgb(230,238,248); --muted: rgb(157,176,198); --line: rgb(36,55,80); --acc: rgb(255,159,28); --acct: rgb(255,179,71); --accbg: rgb(46,34,16); --ok: rgb(76,195,155); --btn: rgb(111,177,255); --btntx: rgb(10,26,46); --hdr: rgb(11,47,91); } }:root[data-theme="dark"] { --bg: rgb(12,22,34); --surface: rgb(20,34,52); --ink: rgb(230,238,248); --muted: rgb(157,176,198); --line: rgb(36,55,80); --acc: rgb(255,159,28); --acct: rgb(255,179,71); --accbg: rgb(46,34,16); --ok: rgb(76,195,155); --btn: rgb(111,177,255); --btntx: rgb(10,26,46); --hdr: rgb(11,47,91); }html { background: var(--bg); }* { box-sizing: border-box; }body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px / 1.4 Barlow, system-ui, sans-serif; padding-bottom: 84px; }body::before { content: ""; position: fixed; inset: 0 0 auto 0; background: var(--hdr); z-index: 10; }h1, h2, b, button, .tab { font-family: "Barlow Semi Condensed", Barlow, system-ui, sans-serif; }.hd { background: var(--hdr); color: rgb(255, 255, 255); border: 5px solid var(--acc); }.in { max-width: 560px; margin: 0 auto 0 auto; padding: 14px 16px 14px 16px; }h1 { margin: 0; font-size: 28px; font-weight: 700; }.sub { margin: 0; color: rgb(220, 232, 248); }main { max-width: 560px; margin: 0 auto 0 auto; padding: 6px 14px 6px 14px; }h2 { font-size: 20px; font-weight: 600; margin: 20px 2px 8px 2px; color: var(--btn); }.seg { display: flex; gap: 6px; margin: 10px 0 4px 0; }.seg button { flex: 1 0%; height: 48px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font-size: 18px; font-weight: 600; cursor: pointer; }.seg button[aria-pressed="true"] { background: var(--btn); color: var(--btntx); : ; border-top-color: ; border-right-color: ; border-bottom-color: ; border-left-color: ; }.cat { width: 100%; display: flex; justify-content: space-between; align-items: center; min-height: 56px; margin-top: 8px; padding: 0 14px 0 14px; background: var(--surface); color: var(--ink); border-top-width: ; border-right-width: ; border-bottom-width: ; border-left-width: ; border-top-style: ; border-right-style: ; border-bottom-style: ; border-left-style: ; border-top-color: ; border-right-color: ; border-bottom-color: ; border-left-color: ; border-radius: 10px; font-size: 20px; font-weight: 600; text-align: left; cursor: pointer; }.cat[aria-expanded="true"] { border-radius: 10px 10px 0 0; }.meta { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 16px; }.meta em { font-style: normal; }.bd { background: var(--acc); color: rgb(27, 18, 0); border-radius: 12px; padding: 0 9px 0 9px; font: normal 700 16px "Barlow Semi Condensed", system-ui, sans-serif; }.ch { font-size: 26px; line-height: 1; transition: transform 0.15s initial initial; }.cat[aria-expanded="true"] .ch { transform: rotate(90deg); }.gb { border-right-width: ; border-bottom-width: ; border-left-width: ; border-right-style: ; border-bottom-style: ; border-left-style: ; border-right-color: ; border-bottom-color: ; border-left-color: ;border-top: 0; border-radius: 0 0 10px 10px; padding: 8px 8px 0 8px; background: var(--bg); }.row { display: flex; align-items: center; gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px 10px 12px; margin-bottom: 8px; }.row.on { : ; border-top-color: ; border-right-color: ; border-bottom-color: ; border-left-color: ; background: var(--accbg); }.nm { flex: 1 0%; min-width: 0px; }.nm b { display: block; font-size: 19px; font-weight: 600; line-height: 1.2; }.nm small { color: var(--muted); font-size: 15px; }.st { display: flex; align-items: center; gap: 6px; }.st button { width: 48px; height: 48px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font-size: 28px; font-weight: 600; cursor: pointer; }.st button[data-a="inc"] { background: var(--btn); color: var(--btntx); : ; border-top-color: ; border-right-color: ; border-bottom-color: ; border-left-color: ; }.st output { min-width: 34px; text-align: center; font: 700 26px "Barlow Semi Condensed", system-ui, sans-serif; }.on .st output { color: var(--acct); }button:focus-visible, input:focus-visible, select:focus-visible, .tab:focus-visible { outline: 3px solid var(--acc); }.todo { cursor: pointer; }.todo input { width: 28px; height: 28px; flex: 0 0 auto; }.todo .q { font: 700 26px "Barlow Semi Condensed", system-ui, sans-serif; color: var(--acct); min-width: 52px; text-align: right; }.todo.done { opacity: 0.55; }.todo.done b { text-decoration: line-through; }.todo.done .q { color: var(--ok); }.empty { background: var(--surface); border: 1px dashed var(--line); border-radius: 10px; padding: 22px 16px 22px 16px; color: var(--muted); text-align: center; }.acts { display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0 14px 0; }.btn { flex: 1 0%; min-width: 150px; height: 50px; border-radius: 10px; border: 1px solid var(--btn); background: var(--btn); color: var(--btntx); font-size: 18px; font-weight: 600; cursor: pointer; }.btn.alt { background: transparent; color: var(--ink); : ; border-top-color: ; border-right-color: ; border-bottom-color: ; border-left-color: ; }.btn.warn { background: var(--acc); : ; border-top-color: ; border-right-color: ; border-bottom-color: ; border-left-color: ; color: rgb(27, 18, 0); }.msg { color: var(--ok); margin: 0 2px 0 2px; min-height: 1.4em; }.ed { display: grid; grid-template-columns: 1fr 84px 44px; gap: 8px; align-items: center; margin-bottom: 8px; }input[type=text], input[type=number], select { width: 100%; height: 46px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: inherit inherit inherit inherit inherit inherit inherit; padding: 0 10px 0 10px; }.ed button { height: 46px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--acct); font-size: 22px; cursor: pointer; }.add { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px; display: grid; gap: 8px; }nav { position: fixed; left: 0; right: 0; bottom: 0; display: flex; background: var(--surface); border: 1px solid var(--line); }.tab { flex: 1 0%; height: 64px; border-top: 4px solid transparent; border-right: 0; border-bottom: 0; border-left: 0; background: none; color: var(--muted); font-size: 18px; font-weight: 600; cursor: pointer; }.tab[aria-selected="true"] { color: var(--btn); border-top-color: var(--acc); }</style>
+</head>
+<body>
+<header class="hd"><div class="in"><h1>Poste de secours</h1><p class="sub" id="sub">Rien d’utilisé pour l’instant</p></div></header>
+<main><div id="view"></div></main>
+<nav role="tablist">
+<button class="tab" role="tab" data-tab="used">Utilisé</button>
+<button class="tab" role="tab" data-tab="restock" id="tr">À réarmer</button>
+<button class="tab" role="tab" data-tab="stock">Dotation</button>
+</nav>
+<script>
+const K="poste-secours-v3";
+const ZN={veh:"Véhicule",bleu:"Sac bleu",rouge:"Sac rouge"};
+const RAW=`@veh
+=Plaies
+Pansement multi taille|1 boîte
+Pansement 10x10cm|5
+Pansement 7,5x7,5cm|10
+Sérum phy|50
+Chlorhexidine|50
+Compresse stérile 10x10cm|20
+Compresse stérile 7,5x7,5cm|20
+Gesco|1
+Ciseaux|2
+Pince à épiler|1
+Loupe|1
+Sparadrap|2
+Doigtiers|20
+=Bilan
+Tensiomètre manuel|1
+Tensiomètre automatique|1
+Thermomètre|1
+Saturomètre|1
+Glucomètre|1
+Pochette piles neuves|1 boîte
+Lancettes|30
+Compresse stérile 5x5cm|10
+Marqueur|1
+=Hémorragie
+Pansement compressif|2
+Marqueur noir|1
+Garrot|1
+Gants stériles T8/M|2
+Gants stériles T9/L|2
+Pansement absorbant|3
+Champ stérile|2
+QuickClot|1
+=Trauma
+Poche de froid|20
+Bande grande|5
+Bande moyenne|10
+Bande petite|5
+Couverture de survie|30
+Echarpes|7
+=Oxygénothérapie adulte
+BAVU|1
+Canules de Guedel|1
+MHC|2
+MMC|2
+Lunettes|1
+=Oxygénothérapie enfant
+BAVU enfant|1
+BAVU pédiatrique|1
+MHC enfant|2
+MMC enfant|2
+Lunettes enfant|1
+Tubulure|2
+Raccord biconique 4/6 et 7/10mm|2
+=Kit infectieux
+Lunettes de protection|4
+FFP2|1
+Visière|4
+Blouse de protection|4
+Charlotte|4
+Surchaussure|4
+=Panneau gauche P1
+Têtière|1 paire
+Sangles araignées|1
+=Panneau gauche P2
+Drap usage unique|6
+=Panneau gauche P3
+Vomibag|10
+Haricot|10
+Poupée|2
+Fiche douleur enfant|1
+=Panneau gauche P4
+Kit membre sectionné|1
+Kit AES|1
+Kit brûlure|1
+Poche de chaud|4
+Ethylotest|4
+Flacon bouchon bleu|4
+Marqueur|1
+Filet tubulaire|1
+Bouchons d’oreille|10
+Brumisateur|1
+=Panneau gauche parois
+Gants S|1 boîte
+Gants M|1 boîte
+Gants L|1 boîte
+Gants XL|1 boîte
+=Panneau avant haut
+Alèse portoir|1
+Couverture bactériostatique|1
+Collier cervical adulte|2
+Collier cervical enfant|2
+Bassin|1
+Urinoir|1
+Ceinture pelvienne|1
+=Panneau avant gauche
+Kit attentat|1
+Sac DASRI|1 boîte
+Sac DAOM|1 boîte
+=Panneau avant étagère
+Drap d’hôpital|2
+Kit maternité|1
+Essuie-tout|1
+Désinfectant|1
+Lingettes|1 boîte
+=Panneau droit P1
+Têtière cuillère|1 paire
+Sangles|3
+=Panneau droit P2
+Bouteille d’eau|6
+Gobelets|3
+Sucre|1 sachet
+Touillette|1 sachet
+=Latérale
+MID|1
+Attelles|2
+Chaise portoir|1
+Sangles chaise|2
+ACT|1
+Plan dur|1
+Brancard cuillère|1
+Bouteille O2|1
+=Schiller
+Electrodes DSA adulte|1
+Electrodes DSA enfant|1
+Rasoir|1
+Gesco|1
+Compresse stérile 7,5x7,5cm|1
+Electrode d’ECG|1 boîte
+Glucomètre|1
+@bleu
+=Petite poche frontale
+OPTC|1 boîte
+DASRI|3
+DAOM|3
+=Poche latérale gauche
+Bouteille d’eau|2
+Sucre et gobelet|1 boîte
+=Poche latérale droite
+Poches de froid|5
+Poches de chaud|5
+=Grande poche frontale
+Rubalise|1
+SHA|1
+FFP2|4
+Masque chir|4
+Gants jetables|4 paires
+Gants de travail|2 paires
+Lampe|1
+Flacon bouchon bleu|1
+=Intérieur
+Tablette|1
+Stylo|1
+Inventaire lot|1
+Fiches bilans|10
+Fiche EVAC|3
+Mémo anglais|1
+Fiche accouchement|2
+Protocole AEV|1
+Inventaire lot C|1
+Vomibag|5
+Coussin|1
+=Poche bleue
+Tensiomètre|1
+Saturomètre|1
+Thermomètre|1
+Glucomètre|1
+Lingettes|1 boîte
+Pochette piles|1
+=Poche verte
+Compresses stériles 10x10cm|20
+Sérum phy|10
+Chlorhexidine|10
+Pansement multi tailles|10
+=Petite poche rouge
+NaCl 0,9%|1
+Savon|1
+Compresses stériles 7,5x7,5cm|3
+DASRI|1
+Sérum phy|10
+Fiche kit AES|1
+AES Cleaner|1
+Ruban adhésif|1
+=Grande poche rouge
+C.H.U.|2
+Champ stérile|1
+Pansement absorbant|3
+Compresses stériles 7,5x7,5cm|4
+Garrot|1
+Pansement hémostatique|2
+=Poche jaune
+Gesco|1
+Ciseau bout rond|1
+Pince à écharde|1
+Bande petite|3
+Bande moyenne|3
+Bande grande|3
+Sparadrap|2
+=Poche mauve
+Couverture de survie|4
+Echarpe|2
+@rouge
+=Poche centrale
+Obus O2 5L|1
+Collier cervical adulte|1
+Collier cervical enfant|1
+=Poche latérale gauche
+BAVU enfant|1
+BAVU pédia|1
+MHC enfant|2
+MMC enfant|2
+Lunettes enfant|2
+Lunettes pédia|2
+Tubulure|2
+Raccord biconique 4/6mm|1
+Raccord biconique 7/10mm|1
+=Poche latérale droite
+BAVU adulte|1
+MHC adulte|2
+MMC adulte|2
+Lunettes|2
+Tubulure|2
+Raccord biconique 4/6mm|1
+Raccord biconique 7/10mm|1
+=Poche face bas
+Aspi à mucosités manuel|1
+Kit sondes aspi|1 boîte
+FFP2|4
+Lunettes de protection|4
+Canules de Guedel|1 boîte`;
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+function parse(){const o=[];let z,c;RAW.split("\n").forEach(l=>{if(l[0]==="@")z=l.slice(1);else if(l[0]==="=")c=l.slice(1);else{const p=l.split("|"),m=p[1].match(/^(\d+)\s*(.*)$/);o.push({id:uid(),zone:z,cat:c,name:p[0],base:+m[1],unit:m[2],used:0,done:false})}});return o}
+let items=null,tab="used",zone="veh",armed=false,msg="";const open=new Set();
+try{const r=localStorage.getItem(K);if(r)items=JSON.parse(r)}catch(e){}
+if(!Array.isArray(items))items=parse();
+function save(){try{localStorage.setItem(K,JSON.stringify(items))}catch(e){}}
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const bl=i=>i.base+(i.unit?" "+i.unit:"");
+const view=document.getElementById("view");
+function render(){
+  const u=items.filter(i=>i.used>0);
+  document.getElementById("sub").textContent=u.length?u.length+(u.length>1?" articles utilisés":" article utilisé"):"Rien d’utilisé pour l’instant";
+  document.getElementById("tr").textContent="À réarmer"+(u.length?" ("+u.length+")":"");
+  document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected",t.dataset.tab===tab));
+  view.innerHTML=tab==="used"?seg()+acc("u",vRow):tab==="restock"?vRestock(u):seg()+acc("s",vEd)+vAdd();
+}
+function cats(z){const c=[];items.forEach(i=>{if(i.zone===z&&!c.includes(i.cat))c.push(i.cat)});return c}
+function seg(){return `<div class="seg" role="group" aria-label="Zone">`+Object.keys(ZN).map(k=>{const n=items.filter(i=>i.zone===k&&i.used>0).length;return `<button data-a="zone" data-z="${k}" aria-pressed="${k===zone}">${ZN[k]}${n?" ("+n+")":""}</button>`}).join("")+`</div>`}
+function acc(p,fn){
+  return cats(zone).map(c=>{const l=items.filter(i=>i.zone===zone&&i.cat===c),k=p+"|"+zone+"|"+c,o=open.has(k),n=l.filter(i=>i.used>0).length;
+  return `<section><button class="cat" data-a="tog" data-k="${esc(k)}" aria-expanded="${o}"><span>${esc(c)}</span><span class="meta">${n?`<i class="bd">${n}</i>`:""}<em>${l.length}</em><b class="ch">›</b></span></button>${o?`<div class="gb">${l.map(fn).join("")}</div>`:""}</section>`}).join("");
+}
+const vRow=i=>`<div class="row ${i.used?"on":""}"><div class="nm"><b>${esc(i.name)}</b><small>Dotation : ${esc(bl(i))}</small></div>
+  <div class="st"><button data-a="dec" data-id="${i.id}" aria-label="Retirer un ${esc(i.name)}">−</button><output>${i.used}</output><button data-a="inc" data-id="${i.id}" aria-label="Ajouter un ${esc(i.name)}">+</button></div></div>`;
+function vRestock(u){
+  if(!u.length)return `<h2>À réarmer</h2><div class="empty">Rien à réarmer. Ce que tu utilises dans l’onglet Utilisé apparaîtra ici.</div>`;
+  const left=u.filter(i=>!i.done).length;
+  return Object.keys(ZN).map(k=>[ZN[k],u.filter(i=>i.zone===k)]).filter(g=>g[1].length).map(([n,l])=>`<h2>${n}</h2>`+l.map(i=>
+  `<label class="row todo ${i.done?"done":""}"><input type="checkbox" data-a="chk" data-id="${i.id}" ${i.done?"checked":""}><span class="nm"><b>${esc(i.name)}</b><small>${esc(i.cat)}, reste ${Math.max(i.base-i.used,0)} sur ${esc(bl(i))}</small></span><span class="q">× ${i.used}</span></label>`).join("")).join("")+
+  `<p class="msg" role="status">${esc(msg)||(left===0?"Tout est réarmé.":left+" à remettre")}</p>
+  <div class="acts"><button class="btn alt" data-a="copy">Copier la liste</button><button class="btn ${armed?"warn":""}" data-a="reset">${armed?"Confirmer la remise à zéro":"Terminer et remettre à zéro"}</button></div>`;
+}
+const vEd=i=>`<div class="ed"><input type="text" value="${esc(i.name)}" data-a="name" data-id="${i.id}" aria-label="Nom"><input type="number" min="0" inputmode="numeric" value="${i.base}" data-a="base" data-id="${i.id}" aria-label="Dotation de ${esc(i.name)}"><button data-a="del" data-id="${i.id}" aria-label="Supprimer ${esc(i.name)}">×</button></div>`;
+function vAdd(){
+  return `<h2>Ajouter un article</h2><div class="add"><input type="text" id="nn" placeholder="Nom de l’article"><select id="nc" aria-label="Catégorie">${cats(zone).map(c=>`<option>${esc(c)}</option>`).join("")}</select><input type="number" id="nb" min="0" inputmode="numeric" placeholder="Quantité de base"><button class="btn" data-a="add">Ajouter</button></div>`;
+}
+function copyText(t){
+  const done=()=>{msg="Liste copiée.";render()};
+  const fb=()=>{const a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy");done()}catch(e){msg="Copie impossible : sélectionne la liste à la main.";render()}a.remove()};
+  try{navigator.clipboard.writeText(t).then(done,fb)}catch(e){fb()}
+}
+document.addEventListener("click",e=>{
+  const t=e.target.closest("[data-tab]");
+  if(t){tab=t.dataset.tab;armed=false;msg="";render();window.scrollTo(0,0);return}
+  const b=e.target.closest("[data-a]");if(!b)return;
+  const a=b.dataset.a,it=items.find(i=>i.id===b.dataset.id);
+  if(a==="zone"){zone=b.dataset.z;armed=false;msg="";render();window.scrollTo(0,0);return}
+  if(a==="tog"){const k=b.dataset.k;open.has(k)?open.delete(k):open.add(k);const y=window.scrollY;render();window.scrollTo(0,y);return}
+  if(a==="inc"&&it){it.used++}
+  else if(a==="dec"&&it){it.used=Math.max(0,it.used-1);if(!it.used)it.done=false}
+  else if(a==="chk"&&it){it.done=b.checked}
+  else if(a==="del"&&it){items=items.filter(i=>i!==it)}
+  else if(a==="copy"){copyText("Réarmement du "+new Date().toLocaleDateString("fr-FR")+Object.keys(ZN).map(k=>{const l=items.filter(i=>i.zone===k&&i.used>0);return l.length?"\n\n"+ZN[k]+"\n"+l.map(i=>"- "+i.used+" × "+i.name).join("\n"):""}).join(""));return}
+  else if(a==="reset"){if(!armed){armed=true;render();return}items.forEach(i=>{i.used=0;i.done=false});armed=false;msg=""}
+  else if(a==="add"){
+    const n=document.getElementById("nn").value.trim();if(!n)return;
+    items.push({id:uid(),zone,cat:document.getElementById("nc").value,name:n,base:Math.max(0,parseInt(document.getElementById("nb").value)||0),unit:"",used:0,done:false})
+  }else return;
+  msg="";save();
+  const y=window.scrollY;render();window.scrollTo(0,y);
+});
+document.addEventListener("change",e=>{
+  const x=e.target,it=items.find(i=>i.id===x.dataset.id);if(!it)return;
+  if(x.dataset.a==="name"&&x.value.trim())it.name=x.value.trim();
+  if(x.dataset.a==="base")it.base=Math.max(0,parseInt(x.value)||0);
+  save();
+});
+render();
+</script>
+
+
+</body></html>
